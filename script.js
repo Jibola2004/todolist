@@ -6,6 +6,7 @@ const taskContainer = document.getElementById("task-container");
 const closeDialogButton = document.getElementById("closeDialog");
 const descriptionDialog = document.getElementById("descriptionDialog");
 const TaskDetail = document.getElementById("Task-details");
+const submitDescription = document.getElementById("submit-description");
 
 let Tasks = [
     { id: 1, name: "buy rice", description: "I want to buy rice at the KAS market on Sunday, and it costs about 367tl." },
@@ -29,25 +30,29 @@ taskContainer.innerHTML = showList();
 // Add new task to the list
 function addListName() {
     if (inputTask.value.length !== 0) {
-        Tasks.push({ id: ++countList, name: inputTask.value, description: "" });
+        Tasks.push({ id: countList=countList+1, name: inputTask.value, description: "" });
         taskContainer.innerHTML = showList();
         inputTask.value = "";
+        countList++;
         descriptionDialog.showModal();
     } else {
         alert("Please enter a task.");
     }
 }
-
+addTask.addEventListener("click",addListName);
 // Add description to the last task
 function addListDescription() {
-    const description = document.getElementById("taskDescription").value;
+    const description = document.getElementById("taskDescription");
     const taskFound = Tasks[Tasks.length - 1];
     if (taskFound) {
-        taskFound.description = description;
+        taskFound.description = description.value;
     }
     descriptionDialog.close();
     taskContainer.innerHTML = showList();
+    description.value="";
+    console.log(Tasks);
 }
+submitDescription.addEventListener("click",addListDescription);
 
 // Show task details
 taskContainer.addEventListener("click", event => {
