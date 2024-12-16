@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+    </main>
+    <div id="text-container">
+       <nav>
+        <div class="content">
+        <img src="./resources/assets/images/ic-logo.svg" alt="logo">
+        <img src="./resources/assets/images/ic-on-campus.svg" alt="on-campus">
+        <img src="./resources/assets/images/ic-online.svg" alt="online">
+        <img src="./resources/assets/images/ic-login.svg" alt="login">
+        </div>
+       </nav>
+       <div class="contact-container">
+          <div class="add-task">
+            <input type="text" id="input-task">
+            <button id="add-task">Add</button>
+          </div>
+          <div class="task-container">
+            <ul id="task-container">
+            </ul>
+            <dialog id="descriptionDialog">
+              <form method="dialog">
+                <!--<label for="taskDescription">Enter Description:</label><br>-->
+                <textarea id="taskDescription" ></textarea><br>
+                <div class="desc-controls">
+                <button type="submit" id="submit-description">Submit</button>
+                <button type="button" id="closeDialog">Cancel</button>
+              </div>
+              </form>
+            </dialog>
+        </div>
+       </div>
+       <div class="chat-container">
+        <div class="controls">
+          <div >
+          <button id="back"><img src="./resources/assets/images/back-svgrepo-com.svg" alt="back"></button>
+        </div>
+        <div>
+          <button id="edit"> <img src="./resources/assets/images/edit_7263935.png" alt="edit" > </button>
+          <button id="delete"> <img src="./resources/assets/images/bin_3389034.png" alt="delete"></button>
+        </div>
+        </div>
+        <div id="Task-details">
+          <h2 id=>no contents to display</h2>
+        </div>
+       </div>
+    </div>
+  <script src="./script.js" ></script>
+</body>
+</html>
